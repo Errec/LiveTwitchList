@@ -401,3 +401,8 @@ template {
  */
 [hidden] {
   display: none; }
+
+.container {
+  height: 500px;
+  width: 500px;
+  background-color: purple; }
