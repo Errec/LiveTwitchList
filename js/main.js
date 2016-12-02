@@ -1,27 +1,37 @@
-$(document).ready(function(){
+$(document).ready(function() {
   var channel = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
+console.log('https://wind-bow.hyperdev.space/twitch-api/streams/ESL_SC2'); // REMOVE
+console.log('https://wind-bow.hyperdev.space/twitch-api/channels/ESL_SC2'); // REMOVE
+
   for (var i = 0; i < channel.length; i++) {
-    Request(channel[i]);
+    Request('streams', channel[i], i);
+    Request('channels', channel[i], i);
   }
 });
 
-function Request(channel){
-  var URL = 'https://wind-bow.hyperdev.space/twitch-api/streams/';
+function Request(APItype, channel, i) {
+  var URL = 'https://wind-bow.hyperdev.space/twitch-api/' + APItype + '/';
   $.ajax({
     url: URL + channel,
     type: 'GET',
     dataType: 'jsonp',
-    success: function(data){
-      AppendChannelInfo(data, channel);
+    success: function(data) {
+      AppendChannelInfo(data, APItype, channel, i);
     }
   });
 }
 
-function AppendChannelInfo(data, channel) {
-  if (data.stream !== null) {
-    $(".container").append('<h3>' + data.stream.game + '<p>' + data.stream.channel.status+ '</p></h3>');
+function AppendChannelInfo(data, APItype, channel, i) {
+  if (APItype === "streams") {
+    if (data.stream !== null) {
+      $(".item-" + i + " h3").text(data.stream.game);
+      $(".item-" + i + " p").text(data.stream.channel.status);
+    } else {
+      $(".item-" + i + " h3").text('offline');
+    }
   } else {
-    $(".container").append('<h3>' + channel + ' not streaming</h3>');
+      $(".item-" + i + " a").attr('href', data.url);
+      $(".item-" + i + " img").attr('src', data.logo);
   }
 }
