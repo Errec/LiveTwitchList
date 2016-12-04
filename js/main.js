@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  var channel = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+  // var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "garenatw"];
+
+var channel = ["ESL_SC2"];
 
 console.log('https://wind-bow.hyperdev.space/twitch-api/streams/ESL_SC2'); // REMOVE
 console.log('https://wind-bow.hyperdev.space/twitch-api/channels/ESL_SC2'); // REMOVE
@@ -25,13 +27,10 @@ function Request(APItype, channel, i) {
 function AppendChannelInfo(data, APItype, channel, i) {
   if (APItype === "streams") {
     if (data.stream !== null) {
-      $(".item-" + i + " h3").text(data.stream.game);
-      $(".item-" + i + " p").text(data.stream.channel.status);
-    } else {
-      $(".item-" + i + " h3").text('offline');
+
     }
   } else {
-      $(".item-" + i + " a").attr('href', data.url);
       $(".item-" + i + " img").attr('src', data.logo);
+      $(".item-" + i + " h4").text(data.display_name);
   }
 }

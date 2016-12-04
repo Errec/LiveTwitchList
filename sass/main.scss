@@ -1,6 +1,19 @@
 @import 'modules/normalize.scss'
 
-.container
-  height: 500px
-  width: 500px
-  background-color: white
+ul
+  border: black solid 2px
+  list-style: none
+
+li
+  border: red solid 2px
+  width: 400px
+
+li h4
+  display: inline-block
+
+li img
+  right: 0px
+  height: 80px
+  width: 80px
+  display: inline-block
+
