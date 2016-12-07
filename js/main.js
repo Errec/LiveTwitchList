@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  // var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "garenatw"];
+  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "garenatw"];
 
-var channel = ["ESL_SC2"];
+// var channel = ["ESL_SC2"];
 
-console.log('https://wind-bow.hyperdev.space/twitch-api/streams/ESL_SC2'); // REMOVE
-console.log('https://wind-bow.hyperdev.space/twitch-api/channels/ESL_SC2'); // REMOVE
+console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
+console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
 
   for (var i = 0; i < channel.length; i++) {
     Request('streams', channel[i], i);
@@ -13,7 +13,7 @@ console.log('https://wind-bow.hyperdev.space/twitch-api/channels/ESL_SC2'); // R
 });
 
 function Request(APItype, channel, i) {
-  var URL = 'https://wind-bow.hyperdev.space/twitch-api/' + APItype + '/';
+  var URL = 'https://wind-bow.gomix.me/twitch-api/' + APItype + '/';
   $.ajax({
     url: URL + channel,
     type: 'GET',

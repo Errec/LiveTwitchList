@@ -1,19 +1,28 @@
 @import 'modules/normalize.scss'
 
+html
+  background: pink
+
 ul
   border: black solid 2px
   list-style: none
+  padding: 0
 
 li
   border: red solid 2px
-  width: 400px
+  width: 280px
 
 li h4
-  display: inline-block
+  float: left
+  vertical-align: middle
+  line-height: 50px
+  margin-left: 4px
 
 li img
-  right: 0px
-  height: 80px
-  width: 80px
-  display: inline-block
+  vertical-align: middle
+  float: right
+  height: 70px
+  width: 70px
 
+li .clear
+  clear: both
