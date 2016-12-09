@@ -3,8 +3,8 @@ $(document).ready(function() {
 
 // var channel = ["ESL_SC2"];
 
-console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
-console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
+  console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
+  console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
 
   for (var i = 0; i < channel.length; i++) {
     Request('streams', channel[i], i);

@@ -402,29 +402,37 @@ template {
 [hidden] {
   display: none; }
 
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  overflow: auto;
+  width: 280px;
+  background-color: #64459B; }
+
+.sidebar li {
+  width: 280px;
+  height: 70px; }
+  .sidebar li:hover {
+    background-color: #8F0B8F; }
+    .sidebar li:hover h4 {
+      margin-left: 28px; }
+
+.sidebar li h4 {
+  transition: margin-left 0.3s ease;
+  font-size: 15px;
+  color: #DCCAFF;
+  float: left;
+  line-height: 50px;
+  margin-left: 16px; }
+
+.sidebar li img {
+  margin: 10px 10px;
+  float: right;
+  height: 50px;
+  width: 50px; }
+
+.sidebar li .clear {
+  clear: both; }
+
 html {
   background: pink; }
-
-ul {
-  border: black solid 2px;
-  list-style: none;
-  padding: 0; }
-
-li {
-  border: red solid 2px;
-  width: 280px; }
-
-li h4 {
-  float: left;
-  vertical-align: middle;
-  line-height: 50px;
-  margin-left: 4px; }
-
-li img {
-  vertical-align: middle;
-  float: right;
-  height: 70px;
-  width: 70px; }
-
-li .clear {
-  clear: both; }
