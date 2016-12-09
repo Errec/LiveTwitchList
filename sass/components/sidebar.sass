@@ -1,22 +1,28 @@
+@import 'variables/colors.sass'
+
 .sidebar ul
   list-style: none
   padding: 0
   overflow: auto
   width: 280px
-  background-color: #64459B
+  background-color: $base
 
 .sidebar li
   width: 280px
   height: 70px
+  &:after
+    content: ''
+    display: table
+    clear: both
   &:hover
-    background-color: #8F0B8F
+    background-color: $base-dark
     h4
-      margin-left: 28px
+      margin-left: 32px
 
 .sidebar li h4
-  transition: margin-left 0.3s ease
+  transition: all 0.3s ease
   font-size: 15px
-  color: #DCCAFF
+  color: $base-light
   float: left
   line-height: 50px
   margin-left: 16px
@@ -27,5 +33,3 @@
   height: 50px
   width: 50px
 
-.sidebar li .clear
-  clear: both

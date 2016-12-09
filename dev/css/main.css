@@ -407,20 +407,24 @@ template {
   padding: 0;
   overflow: auto;
   width: 280px;
-  background-color: #64459B; }
+  background-color: #9B59B6; }
 
 .sidebar li {
   width: 280px;
   height: 70px; }
+  .sidebar li:after {
+    content: '';
+    display: table;
+    clear: both; }
   .sidebar li:hover {
-    background-color: #8F0B8F; }
+    background-color: #6C3384; }
     .sidebar li:hover h4 {
-      margin-left: 28px; }
+      margin-left: 32px; }
 
 .sidebar li h4 {
-  transition: margin-left 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 15px;
-  color: #DCCAFF;
+  color: #FEC7FF;
   float: left;
   line-height: 50px;
   margin-left: 16px; }
@@ -431,8 +435,7 @@ template {
   height: 50px;
   width: 50px; }
 
-.sidebar li .clear {
-  clear: both; }
-
 html {
+  background: pink; }
+ml {
   background: pink; }
