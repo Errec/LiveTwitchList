@@ -435,6 +435,14 @@ template {
   height: 50px;
   width: 50px; }
 
+.status-bar {
+  margin-right: 2px;
+  margin-top: 5px;
+  background-color: #F42206;
+  width: 4px;
+  height: 60px;
+  float: right; }
+
 .content-header {
   background-image: url("/img/banner.jpeg");
   background-size: cover;
