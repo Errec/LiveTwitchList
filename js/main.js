@@ -6,6 +6,17 @@ $(document).ready(function() {
   console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
   console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
 
+
+  var liID;
+  $("li").click(function() {
+    if (this.id !== liID) {
+      $('#' + liID).css("background-color", "#9B59B6");
+      $(this).css("background-color", "#6C3384");
+      liID = this.id;
+    }
+  });
+
+
   for (var i = 0; i < channel.length; i++) {
     Request('streams', channel[i], i);
     Request('channels', channel[i], i);
@@ -30,7 +41,7 @@ function AppendChannelInfo(data, APItype, channel, i) {
 
     }
   } else {
-      $(".item-" + i + " img").attr('src', data.logo);
-      $(".item-" + i + " h4").text(data.display_name);
+      $("#item-" + i + " img").attr('src', data.logo);
+      $("#item-" + i + " h4").text(data.display_name);
   }
 }

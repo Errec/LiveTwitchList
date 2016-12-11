@@ -405,7 +405,6 @@ template {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  overflow: auto;
   max-width: 260px;
   background-color: #9B59B6; }
 
@@ -416,13 +415,15 @@ template {
     content: '';
     display: table;
     clear: both; }
-  .sidebar li:hover {
-    background-color: #6C3384; }
-    .sidebar li:hover h4 {
-      margin-left: 32px; }
+  .sidebar li:hover h4 {
+    margin-left: 32px; }
+  .sidebar li:hover img {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15); }
 
 .sidebar li h4 {
-  transition: all 0.3s ease;
+  transition: all 0.3s;
   font-size: 15px;
   color: #FEDDFF;
   float: left;
@@ -430,6 +431,7 @@ template {
   margin-left: 16px; }
 
 .sidebar li img {
+  transition: all 0.3s;
   margin: 10px 10px;
   float: right;
   height: 50px;

@@ -3,12 +3,10 @@
 .sidebar ul
   list-style: none
   padding: 0
-  overflow: auto
   max-width: 260px
   background-color: $base
 
 .sidebar li
-
   width: 260px
   height: 70px
   &:after
@@ -16,12 +14,13 @@
     display: table
     clear: both
   &:hover
-    background-color: $base-dark
     h4
       margin-left: 32px
+    img
+      transform: scale(1.15)
 
 .sidebar li h4
-  transition: all 0.3s ease
+  transition: all 0.3s
   font-size: 15px
   color: $base-light
   float: left
@@ -29,6 +28,7 @@
   margin-left: 16px
 
 .sidebar li img
+  transition: all 0.3s
   margin: 10px 10px
   float: right
   height: 50px
