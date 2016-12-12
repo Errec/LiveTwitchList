@@ -10,8 +10,8 @@ $(document).ready(function() {
   var liID;
   $("li").click(function() {
     if (this.id !== liID) {
-      $('#' + liID).css("background-color", "#9B59B6");
-      $(this).css("background-color", "#6C3384");
+      $('#' + liID).css("background-color", "#6441A5");
+      $(this).css("background-color", "#3B2064");
       liID = this.id;
     }
   });
