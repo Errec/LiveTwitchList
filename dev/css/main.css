@@ -481,11 +481,25 @@ template {
   -ms-flex-pack: center;
   justify-content: center; }
 
-.btn {
+button {
   background-color: #150E24;
-  color: #D7CDEA;
   width: 250px;
   height: 80px; }
+
+button span {
+  color: #D7CDEA;
+  vertical-align: middle;
+  font-size: 22px;
+  font-weight: 100; }
+
+.btn-off {
+  pointer-events: none; }
+
+.glyphicon {
+  color: #D7CDEA;
+  vertical-align: middle;
+  font-size: 28px;
+  margin-left: 18px; }
 
 .game {
   background-color: #150E24;
@@ -493,16 +507,6 @@ template {
   padding: 4px;
   width: 100%;
   font-size: 14px; }
-
-.btn span {
-  vertical-align: middle;
-  font-size: 22px;
-  font-weight: 100; }
-
-.btn .glyphicon {
-  vertical-align: middle;
-  font-size: 28px;
-  margin-left: 18px; }
 
 html {
   background-color: #D7CDEA; }

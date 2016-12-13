@@ -1,11 +1,10 @@
+$('button').hide();
+$('.game').hide();
 $(document).ready(function() {
   var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "garenatw"];
 
-// var channel = ["ESL_SC2"];
-
   console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
   console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
-
 
   var liID;
   $("li").click(function() {
@@ -15,7 +14,6 @@ $(document).ready(function() {
       liID = this.id;
       $(".content").css('background-image', 'none');
       Request('setOnlineContent', 'streams', channel[liID.slice(-1)], liID.slice(-1));
-      Request('setChannelInfo', 'channels', channel[liID.slice(-1)], liID.slice(-1));
     }
   });
 
@@ -39,10 +37,13 @@ function Request(type, APItype, channelName, i) {
           break;
         case 'setOnlineContent':
           if (data.stream !== null) {
-            SetStreamStatus(data);
+            SetOnlineContent(data);
           } else{
-            $(".game").text("Channel Off line");
+            Request('setOfflineContent', 'channels', channelName, i);
           }
+          break;
+        case 'setOfflineContent':
+          SetOfflineContent(data);
           break;
         case 'setChannelInfo':
           SetChannelInfo(data);
@@ -62,13 +63,20 @@ function SetSideBar(data, i) {
   $("#item-" + i + " h4").text(data.display_name);
 }
 
-function SetStreamStatus(data) {
-  $(".game").text("Streaming : " + data.stream.game);
+function SetOfflineContent(data) {
+  $('.btn-off').show();
+  $('.btn-watch').hide();
+  $(".game").hide();
+  $(".content-header").css('background-image', 'url(' + data.profile_banner + ')');
+  $(".content-body").css('background-image', 'url(' + data.video_banner + ')');
 }
 
-function SetChannelInfo(data) {
-    $(".followers").text("Channel Followers: " + data.followers);
-    $(".views").text("Channel Views: " + data.views);
-    $(".content-header").css('background-image', 'url(' + data.profile_banner + ')');
-    $(".content-body").css('background-image', 'url(' + data.video_banner + ')');
+function SetOnlineContent(data) {
+  $(".content-header").css('background-image', 'url(' + data.stream.channel.profile_banner + ')');
+  $(".content-body").css('background-image', 'url(' + data.stream.preview.large + ')');
+  $('.btn-watch').attr('onclick', 'window.open("' + data.stream.channel.url + '");');
+  $('.btn-watch').show();
+  $('.btn-off').hide();
+  $(".game").text("Streaming : " + data.stream.game);
+  $(".game").show();
 }
