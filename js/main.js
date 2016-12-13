@@ -63,7 +63,7 @@ function SetSideBar(data, i) {
 }
 
 function SetStreamStatus(data) {
-  $(".game").text("Streaming: " + data.stream.game);
+  $(".game").text("Streaming : " + data.stream.game);
 }
 
 function SetChannelInfo(data) {
