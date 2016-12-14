@@ -1,10 +1,5 @@
-$('button').hide();
-$('.game').hide();
 $(document).ready(function() {
-  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "garenatw"];
-
-  console.log('https://wind-bow.gomix.me/twitch-api/streams/ESL_SC2'); // REMOVE
-  console.log('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2'); // REMOVE
+  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate"];
 
   var liID;
   $("li").click(function() {
@@ -16,7 +11,6 @@ $(document).ready(function() {
       Request('setOnlineContent', 'streams', channel[liID.slice(-1)], liID.slice(-1));
     }
   });
-
 
   for (var i = 0; i < channel.length; i++) {
     Request('setSideBar', 'channels', channel[i], i);
@@ -64,8 +58,8 @@ function SetSideBar(data, i) {
 }
 
 function SetOfflineContent(data) {
-  $('.btn-off').show();
-  $('.btn-watch').hide();
+  $('.online-content').css('display', 'none');
+  $('.offline-content').css('display', 'block');
   $(".game").hide();
   $(".content-header").css('background-image', 'url(' + data.profile_banner + ')');
   $(".content-body").css('background-image', 'url(' + data.video_banner + ')');
@@ -75,8 +69,8 @@ function SetOnlineContent(data) {
   $(".content-header").css('background-image', 'url(' + data.stream.channel.profile_banner + ')');
   $(".content-body").css('background-image', 'url(' + data.stream.preview.large + ')');
   $('.btn-watch').attr('onclick', 'window.open("' + data.stream.channel.url + '");');
-  $('.btn-watch').show();
-  $('.btn-off').hide();
+  $('.online-content').css('display', 'block');
+  $('.offline-content').css('display', 'none');
   $(".game").text("Streaming : " + data.stream.game);
   $(".game").show();
 }

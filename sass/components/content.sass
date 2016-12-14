@@ -4,7 +4,7 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center center
-  height: 146px
+  height: 143px
   width: auto
 
 .content-header h4
@@ -15,19 +15,25 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center center
-  height: 414px
+  height: 417px
   width: auto
   display: flex
   flex-direction: column
   align-items : center
   justify-content : center
 
-button
+.offline-content
+  display: none
+
+.online-content
+  display: none
+
+.btn-watch, .btn-off
   background-color: $base-dark
   width: 250px
   height: 80px
 
-button span
+.btn-watch span, .btn-off span
   color: $base-light
   vertical-align: middle
   font-size: 22px
@@ -46,5 +52,6 @@ button span
   background-color: $base-dark
   color: $base-light
   padding: 4px
+  border-radius: 2px
   width: 100%
   font-size: 14px

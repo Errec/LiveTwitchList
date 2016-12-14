@@ -14,6 +14,19 @@ html(class="no-js" lang="en")
     .container-wrapper
       .container
         .sidebar
+          .switches
+            .toggle
+              input(type='checkbox')
+              span.button
+              span.label ON
+            .toggle
+              input(type='checkbox', checked='')
+              span.button
+              span.label OFF
+            .toggle
+              input(type='checkbox')
+              span.button
+              span.label ALL
           ul
             li(id="item-0")
               .status-bar(data-status="offline")
@@ -43,19 +56,17 @@ html(class="no-js" lang="en")
               .status-bar(data-status="offline")
               h4
               img
-            li(id="item-7")
-              .status-bar(data-status="offline")
-              h4
-              img
         .content
           .content-header
           .content-body
-            button.btn-watch(class="btn" onclick="#")
-              span.btn-watch-text Watch Now
-              i(class="glyphicon glyphicon-new-window")
-            h4.game
-            button.btn-off(class="btn")
-              span.btn-off-text Channel Offline
+            .online-content
+              button.btn-watch(class="btn" onclick="#")
+                span.btn-watch-text Watch Now
+                i(class="glyphicon glyphicon-new-window")
+              h4.game
+            .offline-content
+              button.btn-off(class="btn")
+                span.btn-off-text Channel Offline
 
   script(src="/lib/jquery/dist/jquery.min.js")
   script(src="/lib/bootstrap/dist/js/bootstrap.min.js")

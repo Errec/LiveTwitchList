@@ -1,9 +1,13 @@
 @import 'modules/normalize.scss'
 @import 'components/sidebar.sass'
 @import 'components/content.sass'
+@import 'components/switches.sass'
 
 html
   background-color: $base-light
+
+.sidebar
+  background-color: $base
 
 .container-wrapper
   width: 100%
@@ -27,5 +31,6 @@ html
   background-color: $base
   background-repeat: no-repeat
   background-position: center center
+  overflow: hidden
 
 
