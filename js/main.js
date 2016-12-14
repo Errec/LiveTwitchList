@@ -1,7 +1,7 @@
 $(document).ready(function() {
+  var liID;
   var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate"];
 
-  var liID;
   $("li").click(function() {
     if (this.id !== liID) {
       $('#' + liID).css("background-color", "#6441A5");
@@ -43,9 +43,7 @@ function Request(type, APItype, channelName, i) {
           SetChannelInfo(data);
           break;
         case 'checkStatus':
-          if (data.stream !== null) {
-            $("#item-" + i + " .status-bar").css("background-color", "#4CAF52");
-          }
+          CheckStatus(data, i);
           break;
       }
     }
@@ -73,4 +71,14 @@ function SetOnlineContent(data) {
   $('.offline-content').css('display', 'none');
   $(".game").text("Streaming : " + data.stream.game);
   $(".game").show();
+}
+
+function CheckStatus(data, i){
+  if (data.stream !== null) {
+    $("#item-" + i + " .status-bar").css("background-color", "#4CAF52");
+    $("#item-" + i + " .status-bar").attr("data-status", "online");
+  } else {
+      $("#item-" + i + " .status-bar").css("background-color", "#F42206");
+      $("#item-" + i + " .status-bar").attr("data-status", "offline");
+    }
 }
