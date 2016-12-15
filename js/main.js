@@ -3,8 +3,7 @@ $(document).ready(function() {
   var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate"];
 
 $('form input').on('change', function() {
-   var status = $('input:checked').val();
-   FilterListItem(status);
+   FilterListItem($('input:checked').val());
 });
 
   $("li").click(function() {
