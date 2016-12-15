@@ -2,6 +2,11 @@ $(document).ready(function() {
   var liID;
   var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate"];
 
+$('form input').on('change', function() {
+   var status = $('input:checked').val();
+   FilterListItem(status);
+});
+
   $("li").click(function() {
     if (this.id !== liID) {
       $('#' + liID).css("background-color", "#6441A5");
@@ -17,6 +22,34 @@ $(document).ready(function() {
     Request('checkStatus', 'streams', channel[i], i);
   }
 });
+
+function FilterListItem(status) {
+  switch (status) {
+    case 'online':
+      $( "li" ).each(function() {
+        if ($(this).children(".status-bar").attr('data-status') === 'offline') {
+          $(this).css('display','none');
+        } else {
+            $(this).css('display','block');
+          }
+      });
+      break;
+    case 'offline':
+      $( "li" ).each(function() {
+        if ($(this).children(".status-bar").attr('data-status') === 'online') {
+          $(this).css('display','none');
+        } else {
+            $(this).css('display','block');
+          }
+      });
+      break;
+    case 'all':
+      $( "li" ).each(function() {
+          $(this).css('display','block');
+      });
+      break;
+  }
+}
 
 function Request(type, APItype, channelName, i) {
   var URL = 'https://wind-bow.gomix.me/twitch-api/' + APItype + '/';

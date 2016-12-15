@@ -17,15 +17,15 @@ html(class="no-js" lang="en")
           .switches
             form
               .toggle
-                input#tg-on(type="radio" name="status")
+                input#tg-on(type="radio" name="status" value="online")
                 span.button
                 span.label ON
               .toggle
-                input#tg-off(type="radio" name="status")
+                input#tg-off(type="radio" name="status" value="offline")
                 span.button
                 span.label OFF
               .toggle
-                input#tg-all(type="radio" name="status" checked='')
+                input#tg-all(type="radio" name="status" value="all" checked='')
                 span.button
                 span.label ALL
           ul
