@@ -447,7 +447,6 @@ template {
 
 .status-bar {
   margin-right: 6px;
-  margin-top: 10px;
   background-color: #F42206;
   width: 8px;
   height: 80%;
@@ -602,26 +601,54 @@ template {
   body {
     height: 100%; }
   .container {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-flex-direction: column-reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     max-height: 100%; }
   .content {
-    min-height: 30%; }
+    max-height: 30vh; }
   .content-header {
     display: none; }
   .content-body {
-    border-bottom: solid black 2px;
-    min-height: 40%;
+    min-height: 100%;
     display: block;
-    padding-top: 2%; }
+    padding-top: 8%; }
   .switches {
+    border-bottom: solid black 2px;
+    border-top: solid black 2px;
     margin-top: 0;
     padding-top: 0; }
   .sidebar {
     max-height: 70vh; }
   .sidebar ul {
-    border-top: solid black 2px; } }
+    overflow: auto;
+    height: 58vh;
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: top;
+    -ms-flex-pack: top;
+    justify-content: top;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+  .sidebar li h4 {
+    font-size: 14px; }
+  .sidebar li {
+    width: 100%; }
+  .sidebar li img {
+    margin: 2% 5%;
+    height: 60%;
+    width: auto; }
+  .status-bar {
+    height: 40%; } }
 
 html {
   background-color: #D7CDEA; }
