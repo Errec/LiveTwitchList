@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var liID;
-  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate"];
+  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "triplegzgaming"];
 
 $('form input').on('change', function() {
    FilterListItem($('input:checked').val());

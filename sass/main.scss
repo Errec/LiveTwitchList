@@ -8,32 +8,33 @@
 html
   background-color: $base-light
 
-.sidebar
-  background-color: $base
-
 .container-wrapper
   width: 100%
   height: 100%
   background-color: $base-light
   padding: 5% 5%
 
-
 .container
+  height: auto
   border-radius: 10px
   box-shadow: 19px 18px 43px -8px rgba(44,38,64,1)
   display: flex
   padding: 0 ! important // remove padding from bootstrap's default
-  height: 560px
   overflow: hidden
 
+.sidebar
+  height: 560px
+  background-color: $base
+
 .content
+  height: 560px
   width: 100%
-  background-size: 602px 371px
   background-image: url("/img/my-logo2.png")
-  background-size: 90%
+  background-size: 45%
   background-color: $base
   background-repeat: no-repeat
   background-position: center center
   overflow: hidden
+
 
 
