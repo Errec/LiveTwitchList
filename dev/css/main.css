@@ -617,16 +617,20 @@ template {
     display: block;
     padding-top: 8%; }
   .switches {
+    z-index: 1;
+    width: 90vw;
+    position: fixed;
     border-bottom: solid black 2px;
     border-top: solid black 2px;
     margin-top: 0;
     padding-top: 0; }
   .sidebar {
+    overflow: hidden;
+    overflow-y: scroll;
     max-height: 70vh; }
   .sidebar ul {
-    overflow: auto;
-    height: 58vh;
-    padding: 0;
+    z-index: -1;
+    margin: 77px 0 0 0;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -639,16 +643,8 @@ template {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
-  .sidebar li h4 {
-    font-size: 14px; }
   .sidebar li {
-    width: 100%; }
-  .sidebar li img {
-    margin: 2% 5%;
-    height: 60%;
-    width: auto; }
-  .status-bar {
-    height: 40%; } }
+    width: 100%; } }
 
 html {
   background-color: #D7CDEA; }
