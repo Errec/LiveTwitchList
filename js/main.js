@@ -29,7 +29,7 @@ function FilterListItem(status) {
         if ($(this).children(".status-bar").attr('data-status') === 'offline') {
           $(this).css('display','none');
         } else {
-            $(this).css('display','block');
+            $(this).css('display','flex');
           }
       });
       break;
@@ -38,13 +38,13 @@ function FilterListItem(status) {
         if ($(this).children(".status-bar").attr('data-status') === 'online') {
           $(this).css('display','none');
         } else {
-            $(this).css('display','block');
+            $(this).css('display','flex');
           }
       });
       break;
     case 'all':
       $( "li" ).each(function() {
-          $(this).css('display','block');
+          $(this).css('display','flex');
       });
       break;
   }

@@ -9,6 +9,9 @@
   height: 472px
 
 .sidebar li
+  display: flex
+  align-items: center
+  flex-direction: row
   width: 260px
   height: 12.5%
   &:after
@@ -22,26 +25,24 @@
       transform: scale(1.15)
 
 .sidebar li h4
+  flex: 80
   cursor: default
   user-select: none
   transition: all 0.3s
   font-size: 16px
   color: $base-light
-  float: left
   font-weight: 600
   margin-left: 18px
 
 .sidebar li img
   transition: all 0.3s
-  float: right
-  margin: 3% 5%
-  height: 70%
+  height: 80%
+  margin: 0 5%
   width: auto
 
 .status-bar
+  flex: 2
   margin-right: 6px
   background-color: #F42206
-  width: 8px
   height: 80%
-  float: right
   border-radius: 10px
