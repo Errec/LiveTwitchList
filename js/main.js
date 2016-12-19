@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var liID;
-  var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "triplegzgaming"];
+  var channel = ["ESL_SC2", "pokemontcg", "freecodecamp", "adobe", "Nightblue3", "somuchmonsters", "williamchyr", "triplegzgaming"];
 
   $('form input').on('change', function() {
      FilterListItem($('input:checked').val());
@@ -89,8 +89,12 @@ function Request(type, APItype, channelName, i) {
 }
 
 function SetSideBar(data, i) {
-  $("#item-" + i + " img").attr('src', data.logo);
-  $("#item-" + i + " h4").text(data.display_name);
+  if (data.error) {
+    $("#item-" + i).remove();
+  } else {
+    $("#item-" + i + " img").attr('src', data.logo);
+    $("#item-" + i + " h4").text(data.display_name);
+  }
 }
 
 function SetOfflineContent(data) {
