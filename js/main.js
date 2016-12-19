@@ -2,21 +2,17 @@ $(document).ready(function() {
   var liID;
   var channel = ["ESL_SC2", "OgamingSC2", "freecodecamp", "captainsparklez", "Nightblue3", "riotgames", "syndicate", "triplegzgaming"];
 
-$('form input').on('change', function() {
-   FilterListItem($('input:checked').val());
-});
+  $('form input').on('change', function() {
+     FilterListItem($('input:checked').val());
+  });
 
   $("li").click(function() {
     if (this.id !== liID) {
-      $('#' + liID).css("background-color", "#6441A5");
-      $(this).css("background-color", "#3B2064");
-      liID = this.id;
-      $(".content").css('background-image', 'none');
-      Request('setOnlineContent', 'streams', channel[liID.slice(-1)], liID.slice(-1));
+      liID = SelectCurrentContent(this, liID, channel);
     }
   });
 
-  for (var i = 0; i < channel.length; i++) {
+  for(var i = 0; i < channel.length; i++) {
     Request('setSideBar', 'channels', channel[i], i);
     Request('checkStatus', 'streams', channel[i], i);
   }
@@ -48,6 +44,16 @@ function FilterListItem(status) {
       });
       break;
   }
+}
+
+function SelectCurrentContent(currentLi, liID, channel) {
+  $('#' + liID).css("background-color", "#CCD0D4");
+  $(currentLi).css("background-color", "#A6A9AB");
+  liID = currentLi.id;
+  $(".content").css('background-image', 'none');
+  Request('setOnlineContent', 'streams', channel[liID.slice(-1)], liID.slice(-1));
+
+  return liID;
 }
 
 function Request(type, APItype, channelName, i) {

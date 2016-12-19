@@ -404,10 +404,10 @@ template {
   display: none; }
 
 .sidebar ul {
-  background-color: #6441A4;
+  background-color: #CCD0D4;
   list-style: none;
   padding: 0;
-  background-color: #6441A4;
+  background-color: #CCD0D4;
   overflow: hidden;
   height: 472px; }
 
@@ -435,9 +435,9 @@ template {
     transform: scale(1.15); }
 
 .sidebar li h4 {
-  -webkit-flex: 80;
-  -ms-flex: 80;
-  flex: 80;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -445,7 +445,7 @@ template {
   user-select: none;
   transition: all 0.3s;
   font-size: 16px;
-  color: #D7CDEA;
+  color: #3E4041;
   font-weight: 600;
   margin-left: 18px; }
 
@@ -456,9 +456,7 @@ template {
   width: auto; }
 
 .status-bar {
-  -webkit-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
+  width: 4px;
   margin-right: 6px;
   background-color: #F42206;
   height: 80%;
@@ -468,7 +466,7 @@ template {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 25%;
+  height: 159px;
   width: auto; }
 
 .content-header h4 {
@@ -479,7 +477,7 @@ template {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 75%;
+  height: 425px;
   width: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -501,12 +499,12 @@ template {
   display: none; }
 
 .btn-watch, .btn-off {
-  background-color: #150E24;
+  background-color: #CCD0D4;
   width: 250px;
   height: 80px; }
 
 .btn-watch span, .btn-off span {
-  color: #D7CDEA;
+  color: #3E4041;
   vertical-align: middle;
   font-size: 22px;
   font-weight: 100; }
@@ -515,14 +513,14 @@ template {
   pointer-events: none; }
 
 .glyphicon {
-  color: #D7CDEA;
+  color: #3E4041;
   vertical-align: middle;
   font-size: 28px;
   margin-left: 18px; }
 
 .game {
-  background-color: #150E24;
-  color: #D7CDEA;
+  background-color: #CCD0D4;
+  color: #3E4041;
   padding: 4px;
   border-radius: 2px;
   width: 100%;
@@ -532,21 +530,21 @@ template {
   margin-top: 15px;
   text-align: center;
   width: 100%;
-  background: #6441A4; }
+  background: #CCD0D4; }
 
 .toggle {
-  margin: 4px;
+  margin: 10px;
   display: inline-block; }
 
 .toggle {
-  background: #6441A4;
+  background: #CCD0D4;
   position: relative;
   height: 60px;
   width: 60px; }
   .toggle:before {
-    box-shadow: 0 0 7.5px 3.75px #D7CDEA;
+    box-shadow: 0 0 7.5px 3.75px #FFF;
     border-radius: 50.7px;
-    background: #D7CDEA;
+    background: #FFF;
     position: absolute;
     margin-left: -21.6px;
     margin-top: -21.6px;
@@ -564,7 +562,7 @@ template {
     box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
     border-radius: 41.28px;
     position: absolute;
-    background: #6441A4;
+    background: #CCD0D4;
     margin-left: -20.64px;
     margin-top: -20.64px;
     display: block;
@@ -574,7 +572,7 @@ template {
     top: 50%; }
   .toggle .label {
     transition: color 300ms ease-out;
-    text-shadow: 1px 1px 3px #6441A4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #D7CDEA;
+    text-shadow: 1px 1px 3px #CCD0D4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #FFF;
     line-height: 52px;
     text-align: center;
     position: absolute;
@@ -587,7 +585,7 @@ template {
     color: rgba(0, 0, 0, 0.4); }
   .toggle input {
     opacity: 0;
-    background: #6441A4;
+    background: #CCD0D4;
     position: absolute;
     cursor: pointer;
     z-index: 1;
@@ -641,18 +639,18 @@ template {
     max-height: 70vh; }
   .sidebar ul {
     z-index: -1;
-    margin: 77px 0 0 0; }
+    margin: 89px 0 0 0; }
   .sidebar li {
     width: 100%; } }
 
 html {
-  background-color: #D7CDEA; }
+  background-color: #B3ABC3; }
 
 .container-wrapper {
   width: 100%;
   height: 100%;
-  background-color: #D7CDEA;
-  padding: 5% 5%; }
+  background-color: #B3ABC3;
+  padding: 3% 5%; }
 
 .container {
   height: auto;
@@ -665,15 +663,15 @@ html {
   overflow: hidden; }
 
 .sidebar {
-  height: 560px;
-  background-color: #6441A4; }
+  height: 572px;
+  background-color: #CCD0D4; }
 
 .content {
-  height: 560px;
+  height: 572px;
   width: 100%;
   background-image: url("/img/my-logo2.png");
   background-size: 45%;
-  background-color: #6441A4;
+  background-color: #CCD0D4;
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden; }
