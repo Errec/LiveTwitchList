@@ -3,7 +3,13 @@ $(document).ready(function() {
   var channel = ["ESL_SC2", "pokemontcg", "freecodecamp", "adobe", "Nightblue3", "somuchmonsters", "williamchyr", "triplegzgaming"];
 
   $('form input').on('change', function() {
-     FilterListItem($('input:checked').val());
+    $(".content").css('background-image', 'url("/img/my-logo2.png")');
+    $(".online-content").hide();
+    $(".offline-content").hide();
+    $('li').css('background-color', '#CCD0D4');
+    $(".content-body").css('background-image', 'none');
+    $(".content-header").css('background-image', 'none');
+    FilterListItem($('input:checked').val());
   });
 
   $("li").click(function() {

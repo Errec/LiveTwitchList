@@ -406,7 +406,7 @@ template {
 .sidebar ul {
   background-color: #CCD0D4;
   list-style: none;
-  padding: 0;
+  padding: 0 0 10px 0;
   background-color: #CCD0D4;
   overflow: hidden;
   height: 472px; }
