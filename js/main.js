@@ -9,11 +9,14 @@ $(document).ready(function() {
     $('li').css('background-color', '#CCD0D4');
     $(".content-body").css('background-image', 'none');
     $(".content-header").css('background-image', 'none');
+    console.log(liID);
+    liID = null;
+    console.log(liID);
     FilterListItem($('input:checked').val());
   });
 
   $("li").click(function() {
-    if (this.id !== liID) {
+    if (this.id !== liID || liID !== null) {
       liID = SelectCurrentContent(this, liID, channel);
     }
   });
